@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jquery-plate</title>
+
+        <style>
+            body {margin: 0 0 30px; background: #c7cfb8; font-family: arial;}
+            h1 {margin: 20px 0; text-align: center; color: #3c4135;}
+            h2 {margin: 50px 0 20px; text-align: center; color: #3c4135;}
+            p {text-align: center;}
+            a {color: #198995;}
+            pre {width: 382px; margin: 10px auto; padding: 10px; background: #e8ece3;}
+            .pointer {cursor: pointer;}
+            .plate {width: 300px; height: 200px; background: #3c4135; color: #fff; margin: 0 auto; line-height: 200px; text-align: center; font-size: 24px;}
+            .listener {display: flex; width: 400px; height: 300px; margin: 0 auto; border: 1px solid #3c4135; transition: background 200ms;}
+            .listener:hover {background: #adba93;}
+            .listener.small {width: 200px; height: 200px; margin-bottom: 20px;}
+            .listener .plate {margin: auto;}
+        </style>
+    </head>
+    <body>
+        <h1>jquery-plate</h1>
+
+        <p>Source and documentation on <a href="https://github.com/krebszattila/jquery-plate">GitHub</a></p>
+
+        <h2>Default</h2>
+
+        <pre>$('#plate-default').plate();</pre>
+        <div id="plate-default" class="plate pointer">#plate-default</div>
+
+        <h2>Inverse</h2>
+        <pre>$('#plate-inverse').plate({
+    inverse: true
+});</pre>
+        <div id="plate-inverse" class="plate pointer">#plate-inverse</div>
+
+        <h2>Custom</h2>
+        <pre>$('#plate-custom').plate({
+    perspective: 200,
+    maxRotation: 20,
+    animationDuration: 100
+});</pre>
+        <div id="plate-custom" class="plate pointer">#plate-custom</div>
+
+        <h2>Contained</h2>
+        <pre>&lt;div id="listener-contained"&gt;
+    &lt;div id="plate-contained"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        <pre>$('#listener-contained').plate({
+    element: '#plate-contained'
+});</pre>
+        <div id="listener-contained" class="listener pointer">
+            <div id="plate-contained" class="plate">#plate-contained</div>
+        </div>
+
+        <h2>Remote</h2>
+        <pre>&lt;div id="listener-remote"&gt;&lt;/div&gt;
+&lt;div id="plate-remote"&gt;&lt;/div&gt;
+</pre>
+        <pre>$('#listener-remote').plate({
+    element: $('#plate-remote')
+});</pre>
+        <div id="listener-remote" class="listener small pointer"></div>
+        <div id="plate-remote" class="plate">#plate-remote</div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdn.rawgit.com/krebszattila/jquery-plate/master/src/jquery.plate.js"></script>
+        <script>
+            $('#plate-default').plate();
+            $('#plate-inverse').plate({
+                inverse: true
+            });
+            $('#plate-custom').plate({
+                perspective: 200,
+                maxRotation: 20,
+                animationDuration: 100
+            });
+            $('#listener-contained').plate({
+                element: '#plate-contained'
+            });
+            $('#listener-remote').plate({
+                element: $('#plate-remote')
+            });
+        </script>
+    </body>
+</html>
