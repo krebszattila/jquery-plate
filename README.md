@@ -2,7 +2,7 @@
 
 An easy to use jQuery plugin for adding nice 3D hover effect on any element.
 
-Check out to [examples](https://krebszattila.github.io/jquery-plate/)!
+Check out the [examples](https://krebszattila.github.io/jquery-plate/)!
 
 ## Setup ##
 
